@@ -2,8 +2,8 @@ const express = require ('express');
 const app = express();
 
 app.get('/',function(req,res){
-    res.send("Servidor está funcionando");
-});
+    res.sendFile(__dirname + '/html/index.html')
+    });
 
 
 
