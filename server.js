@@ -4,7 +4,10 @@ const app = express();
 app.get('/',function(req,res){
     res.sendFile(__dirname + '/view/index.html')
     });
-
+app.get('/private.html',function(req,res){
+    res.sendFile(__dirname + '/view/private.html')
+    });
+    
 app.listen(8080,function(erro){
     if(erro){
         console.log('Ocorreu um erro!');

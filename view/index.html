@@ -2,270 +2,99 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <linck rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <title>Termo de Contrato</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
 <style>
-        	body {
-			margin: 0;
-			padding: 0;
-			font-family: 'Lato', sans-serif;
-
-		}
-		:root {
-			--theme-color1: #fff;
-			--theme-color2: #f06161;
-			
-		}
-		.colored {
-		width: 100%;
-		background: #f06161;
-		-webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.18);
-		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.18);
-		padding-top: 10px;
-		padding-bottom: 10px;
-		margin-top: 0;
-	}
-	
- .nav-items {
-	 display: flex;
-	 justify-content: space-between;
-	 align-items: center;
-	 margin-top: 10px;
-	 margin-bottom: 10px;
-}
- .nav-items .main-nav {
-	 width: 100%;
-	 display: flex;
-	 list-style: none;
-	 margin: 0;
-	 padding: 0;
-}
- .nav-items .main-nav li a {
-	 text-decoration: none;
-	 font-weight: 600;
-	 font-size: 14px;
-	 color: var(--theme-color1);
-	 text-transform: uppercase;
-	 padding-right: 7px;
-	 padding-left: 7px;
-	 text-transform: uppercase;
-	 font-size: 14px;
-	 font-weight: 500;
-	 margin-right: 10px;
-	 margin-left: 10px;
-	 display: block;
-	 border-bottom: 2px solid transparent;
-	 padding-bottom: 15px;
-	 padding-top: 15px;
-	 white-space: nowrap;
-}
- .nav-items .main-nav li a:hover {
-	border-color: var(--theme-color1);
-
-}
- .nav-items .main-nav li a.active {
-	 border-color: var(--theme-color1);
-}
- .site-logo {
-	width: 78.33px;
-    margin-right: 50px;
-}
- .btn {
-	 border-radius: 5px;
-	 font-weight: normal;
-	 font-size: 15px;
-	 letter-spacing: 0.02em;
-	 line-height: 12px;
-	 text-align: center;
-	 font-weight: 600;
-	 font-size: 14px;
-	 padding: 14px 30px;
-	 cursor: pointer;
-}
- .btn-theme {
-	 background: var(--theme-color1);
-	 color: #212121;
-}
- .form-inline {
-	 display: flex;
-}
- .form-inline .btn {
-	 height: 38px;
-	 text-align: center;
-	 margin-left: 10px;
-	 white-space: nowrap;
-}
-.c-container {
+        body {
+    background: #333;
+  }
+  
+  .raw {
+    height: 120px;
+    width: 500px;
     margin: auto;
-    width: 93%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  /* perspective */
+  
+  .flip-container {
+    perspective: 1000;
+    margin: 10px;
+    float: left;
+  }
+  /* turning on hover */
+  
+  .flip-container:hover .flipper {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-container,
+  .front,
+  .back {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 20px;
+  }
+  /* flipping speed here */
+  
+  .flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
     position: relative;
-    z-index: 1;
-}
-.form-inline .btn {
-    height: 38px;
-    text-align: center;
-    margin-left: 10px;
-    white-space: nowrap;
-}
-.form-inline .btn {
-    font-size: 14px;
-    padding-top: 11.5px;
-}
-.btn-outline-white {
-    color: var(--theme-color1);
-    background-color: rgba(255, 255, 255, 0.1);
-    background-image: none;
-    border-width: 2px;
-    border-color: var(--theme-color1);
-    font-weight: 500;
-    -webkit-transition: all .2s;
-    transition: all .2s;
-}
-.btn {
-    border-radius: 5px;
-    font-weight: normal;
-    font-size: 15px;
-    letter-spacing: 0.02em;
-    line-height: 12px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 14px;
-    padding: 14px 30px;
-    cursor: pointer;
-}
-.btn.btn-primary {
-	background-color: var(--theme-color1);
-	color: var(--theme-color2);
-	border-color:  var(--theme-color1);
-}
-.btn-outline-white:hover {
-    background-color: var(--theme-color1);
-    color: var(--theme-color2);
-}
-@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
-body {
-  background: #333;
-}
-
-.raw {
-  height: 120px;
-  width: 500px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-/* perspective */
-
-.flip-container {
-  perspective: 1000;
-  margin: 10px;
-  float: left;
-}
-/* turning on hover */
-
-.flip-container:hover .flipper {
-  transform: rotateY(180deg);
-}
-
-.flip-container,
-.front,
-.back {
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
-  text-align: center;
-  font-size: 30px;
-  border-radius: 20px;
-}
-/* flipping speed here */
-
-.flipper {
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  position: relative;
-}
-/* making the the other side hidden while flipping */
-
-.front,
-.back {
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-/* front side is in front of a back side */
-
-.front {
-  z-index: 2;
-  background-color: #f06161;
-  color: white;
-}
-/* back side */
-
-.back {
-  transform: rotateY(180deg);
-  background-color: lightblue;
-}
-
-.back p {
-  font-size: 18px;
-  margin-top: 0px;
-  font-family: 'Kaushan Script', cursive;
-  border: 1px solid white;
-  border-radius: 20px;
-  background-color: #333;
-  color: white;
-}
-    </style>
-
-<header class="header colored sticky-header" data-scroll="out">
-    <!-- Start do navbart -->
-<div class="c-container">
-    <div class="nav-items">
-        <a href="">
-            <img class="site-logo" src="https://md-aqil.github.io/images/logo2.png" alt="">
-        </a>
-            <ul class="main-nav">
-                <li class="nav-item active">
-                    <a class="nav-link active" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Privacidade</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Juridico</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Segurança</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Ações</a>
-                </li>
-            </ul>
-        <div class="form-inline">
-            <button class="btn btn-outline-white mr-2" type="submit">REGISTER</button>
-        </div>
-        <div class="form-inline">
-           <button class="btn btn-outline-white mr-2" data-toggle="modal" data-target="#one">LOGIN</button>
-        </div>
-    </div>
-</div>
-</header>
+  }
+  /* making the the other side hidden while flipping */
+  
+  .front,
+  .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  /* front side is in front of a back side */
+  
+  .front {
+    z-index: 2;
+    background-color: #B6E1F6;
+    color: white;
+  }
+  /* back side */
+  
+  .back {
+    transform: rotateY(180deg);
+    background-color: lightblue;
+  }
+  
+  .back p {
+    font-size: 18px;
+    margin-top: 0px;
+    font-family: 'Kaushan Script', cursive;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color:#3b5998;
+    color: white;
+  }
+  </style>
 </head>
+
 <body>
     <!-- START DOS CARDS -->
 <div class="raw">
-  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="Page()" style="cursor: pointer;">
     <div class="flipper">
       <div class="front">
       </div>
@@ -275,7 +104,7 @@ body {
     </div>
   </div>
 
-  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="Page()" style="cursor: pointer;">
     <div class="flipper">
       <div class="front">
       </div>
@@ -286,7 +115,7 @@ body {
   </div>
 
 
-  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="Page()" style="cursor: pointer;">
     <div class="flipper">
       <div class="front">
       </div>
@@ -296,16 +125,18 @@ body {
     </div>
   </div>
 
-  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');" onclick="Page()" style="cursor: pointer;">
     <div class="flipper">
-      <div class="front">
-      </div>
-      <div class="back">
-        <p>Ações</p>
-      </div>
-    </div>
-  </div>
-</div>    
+          <div class="front">
+          </div>
+        <div class="back">
+          <p>Ações</p>
+        </div>
+  </div> 
+</div>
+
+</div>
+
 </body>
 
 <footer>
@@ -315,4 +146,9 @@ body {
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script>
+  function Page(){
+    console.log("DEU CERTO");
+  }
+</script>
 </html>
