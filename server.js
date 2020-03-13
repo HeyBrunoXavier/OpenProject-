@@ -7,6 +7,9 @@ app.get('/',function(req,res){
 app.get('/private.html',function(req,res){
     res.sendFile(__dirname + '/view/private.html')
     });
+app.get('/Contratos.html',function(req,res){
+        res.sendFile(__dirname + '/view/contratos.html')
+        });
     
 app.listen(8080,function(erro){
     if(erro){
