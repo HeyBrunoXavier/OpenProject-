@@ -4,8 +4,8 @@ const app = express();
 app.get('/',function(req,res){
     res.sendFile(__dirname + '/view/index.html')
     });
-app.get('/private.html',function(req,res){
-    res.sendFile(__dirname + '/view/private.html')
+app.get('/high.html',function(req,res){
+    res.sendFile(__dirname + '/view/high.html')
     });
 app.get('/Contratos.html',function(req,res){
         res.sendFile(__dirname + '/view/contratos.html')

@@ -13,11 +13,11 @@ body{
 }
 :root{
     --theme-color1: #DFF2FA;
-    --theme-color2:#4E85B5;	
+    --theme-color2: #3b5998;	
 }
 .colored {
 	width: 100%;
-	background:  #19A3A3;
+	background: #3b5998;
 	-webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.18);
 	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.18);
 	padding-top: 10px;
@@ -144,7 +144,6 @@ body{
 .container{
     margin: auto;
     width:960px;  
-
 }
 #principal{
     min-height: 200px;         
@@ -156,51 +155,33 @@ h1{
     text-shadow: 1px 1px 1px #111111;
     margin: 0 0 50px 0;
 }
-
 </style>
 </head>
-<body>
-    <header class="header colored sticky-header" data-scroll="out">
-        <!-- Start do navbar -->
-    <div class="c-container">
-        <div class="nav-items">
-            <a href="">
-                <img class="site-logo" src="https://md-aqil.github.io/images/logo2.png" alt="">
-            </a>
+<body>        
+        <header class="header colored sticky-header" data-scroll="out">
+            <!-- Start do navbar -->
+        <div class="c-container">
+            <div class="nav-items">           
+                <a href="">
+                    <img class="site-logo" src="https://md-aqil.github.io/images/logo2.png" alt="">
+                </a>
                 <ul class="main-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Privacidade</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Juridico</a>
-                    </li>
-                    <li class="nav-item">
-                         <a class="nav-link" href="#">Segurança</a>
-                    </li> 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Ações</a>
-                    </li>
-                </ul>
-            <div class="form-inline">
-               <button class="btn btn-outline-white mr-2" data-toggle="modal" data-target="#one">LOGIN</button>
-            </div>            
+                    <button class="btn btn-danger" data-toggle="collapse" data-target="#clps">Click</button>                  
+                </ul>            
+               
+                <div class="form-inline">
+                   <button class="btn btn-outline-white mr-2" data-toggle="modal" data-target="#one">LOGIN</button>
+                </div>            
+           </div> 
         </div>
-    </div>
     </header>
 
     <div id="principal">                         
         <div class="container">
             <div class="row d-flex justify-content-center">
-                <h1>teste</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tortor magna, convallis sit amet orci in, imperdiet bibendum lacus. 
-                    Phasellus b bibendum sollicitudin ultrices. Nunc quis vulputate ipsum. Integer libero mi, posuere sit amet dolor eget, ullamcorper vulputate ligula. 
-                    Morbi commodo suscipit sapien eu ornare. Praesent convallis dolor ac dapibus posuere. 
-                    Donec et elit ac lorem lacinia pharetra. Nunc in elit maximus turpis venenatis hendrerit molestie vel elita.
-                </p>
+                <div class="collapse" id="clps">
+                    teste            
+                </div>
             </div>
         </div>                                            
     </div>
