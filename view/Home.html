@@ -357,8 +357,7 @@ position: absolute;
 left: 25px;
 top: 190px;
 }
-.page{display:none}
-.hide { display: none;}
+
 .active{ background: red !important; }
 </style>
 	</head>
@@ -373,7 +372,7 @@ top: 190px;
 	  <li>
 		<div>
 		  <div>
-			<div><i class="fas fa-user-secret" data-page=privacidade></i></div>
+			<div><i class="fas fa-user-secret"></i></div>
 		  </div>
 		  <div></div>
 		</div>
@@ -406,7 +405,7 @@ top: 190px;
 	</div>
 
 		<div id="pages">
-			<section id="fas fa-user-secret" class="page" data-page="privacidade">
+			<section id="fas fa-user-secret" class="page">
 				<header> História </header>
 				<p> se passando duzentos anos depois dos eventos de Oblivion. 
 					Na premissa de Skyrim, o Império começa a ceder territórios
@@ -441,21 +440,29 @@ switchContainer.on('click', function() {
 });
 </script>
 <script>
-
+	$("#sidebar").on("click", ".click", function(event){
+		console.log("click");
+	});
 </script>
 
 <script>//Quando o documento estiver pronto
 	$(document).ready(function() {
-	   
+	    
+		$("#pages").css("display", "none",{
+			
+		});
+		$("#sidebar").on("click", "display","true",function(event){
+
+		});
 		//Função que mostra o conteúdo de acordo com o botão clicado
 		$("#sidebar li a").on('click', function(e) {
-			e.preventDefault();
-			var page = $(this).data('page');
-			$("#pages .page:not('.hide')").stop().fadeOut('fast', function() {
-				$(this).addClass('hide');
-				$('#pages .page[data-page="'+page+'"]').fadeIn('slow').removeClass('hide');
-			});
-		});
+        e.preventDefault();
+        var page = $(this).data('page');
+		$("#pages .page:not('.hide')").stop().fadeOut('fast', function() {
+            $(this).addClass('hide'); 			
+            $('#pages .page[data-page="'+page+'"]').fadeIn('slow').removeClass('hide');              
+        });
+    });
 		
 		//Função que insere a classe Active no botão que foi clicado
 		$("#sidebar li").on('click', function(){
