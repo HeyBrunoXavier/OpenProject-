@@ -357,6 +357,9 @@ position: absolute;
 left: 25px;
 top: 190px;
 }
+.page{display:none}
+.hide { display: none;}
+.active{ background: red !important; }
 </style>
 	</head>
 <body>
@@ -370,7 +373,7 @@ top: 190px;
 	  <li>
 		<div>
 		  <div>
-			<div><i class="fas fa-user-secret"></i></div>
+			<div><i class="fas fa-user-secret" data-page=privacidade></i></div>
 		  </div>
 		  <div></div>
 		</div>
@@ -401,6 +404,23 @@ top: 190px;
 	</ul>
   </nav>
 	</div>
+
+		<div id="pages">
+			<section id="fas fa-user-secret" class="page" data-page="privacidade">
+				<header> História </header>
+				<p> se passando duzentos anos depois dos eventos de Oblivion. 
+					Na premissa de Skyrim, o Império começa a ceder territórios
+					para as nações Élficas uma vez governadas, porque não há 
+					nenhum herdeiro para o trono do Imperador. Os Blades não tem 
+					ninguém para defender, e gradualmente morreram, foram assassinados 
+					ou se isolaram do resto do mundo. Depois do assassinato do Rei de 
+					Skyrim, uma guerra civil irrompe entre as raças nativas Nord — sendo 
+					a maioria aqueles que desejavam que Skyrim se separe do Império, 
+					e o resto sendo aqueles que desejam que Skyrim permaneça no Império.
+				</p>
+			</section>
+		</div>
+	</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -421,8 +441,27 @@ switchContainer.on('click', function() {
 });
 </script>
 <script>
-	$("#sidebar").on("click", ".click", function(event){
-    console.log('clicked');
-});
+
+</script>
+
+<script>//Quando o documento estiver pronto
+	$(document).ready(function() {
+	   
+		//Função que mostra o conteúdo de acordo com o botão clicado
+		$("#sidebar li a").on('click', function(e) {
+			e.preventDefault();
+			var page = $(this).data('page');
+			$("#pages .page:not('.hide')").stop().fadeOut('fast', function() {
+				$(this).addClass('hide');
+				$('#pages .page[data-page="'+page+'"]').fadeIn('slow').removeClass('hide');
+			});
+		});
+		
+		//Função que insere a classe Active no botão que foi clicado
+		$("#sidebar li").on('click', function(){
+			 $(this).siblings().removeClass('active');
+			 $(this).addClass('active');
+		});
+	});
 </script>
 </html>
