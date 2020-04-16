@@ -1,7 +1,7 @@
 const express = require ('express');
 const app = express();
-
- // Rotas HTTP da Aplicação
+app.use(express.static('public'));
+// Rotas HTTP da Aplicação
 app.get('/',function(req,res){
     res.sendFile(__dirname + '/view/index.html')
 });
