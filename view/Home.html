@@ -421,9 +421,9 @@ switchContainer.on('click', function() {
 	$(document).ready(function() {
 		$('#privacidade').hide();
 
-		$('#privacidade').click(function(event){
+		$('.fas fa-user-secret').click(function(event){
 			event.preventDefault();
-			$("#privacidade").show("slow");
+			$(".fas fa-user-secret").show("slow");
 		});
 		//Função que mostra o conteúdo de acordo com o botão clicado
 		$("#sidebar li a").on('click', function(e) {
