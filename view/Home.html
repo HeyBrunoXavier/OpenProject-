@@ -331,67 +331,60 @@ nav ul li > div {
     left: 25px;
     top: 190px;
 }
-
-.page{display:none;}
-.active{ background: #00FF00 !important; }
-</style>	
-	</head>
-<body>
-	<div class="switch-container">
-		<div class="switch"></div>
-	</div>
-	<div class="container">
-		
-<nav id="sidebar">
-	<ul class="click">
-	  <li>
-		<div>
-		  <div>
-			<div><i class="fas fa-user-secret"></i>
-				<div id="privacidade">					
-					<p> se passando duzentos anos depois dos eventos de Oblivion. 
-						Na premissa de Skyrim, o Império começa a ceder territórios
-						para as nações Élficas uma vez governadas, porque não há 
-						nenhum herdeiro para o trono do Imperador. Os Blades não tem 
-						ninguém para defender, e gradualmente morreram, foram assassinados 
-						ou se isolaram do resto do mundo. Depois do assassinato do Rei de 
-						Skyrim, uma guerra civil irrompe entre as raças nativas Nord — sendo 
-						a maioria aqueles que desejavam que Skyrim se separe do Império, 
-						e o resto sendo aqueles que desejam que Skyrim permaneça no Império.
-					</p>
-				</div>				
-			</div>							
-		  </div>
-		  <div></div>
+.active{
+    background:  #22C322!important;
+}
+</style>
+	<body>
+		<div class="switch-container">
+			<div class="switch"></div>
 		</div>
-	  </li>
-	  <li>
-		<div class="">
-		  <div class="">
-			<div class=""><i class="fas fa-user-shield"></i></div>
-			<div class=""></div>
-		  </div>
+		<div class="container">
+	
+			<nav id="sidebar">
+				<ul class="click">
+					<li onclick='getPrivati()'>
+						<div>
+							<div>
+								<div><i class="fas fa-user-secret"></i></div>
+							</div>
+							<div></div>
+						</div>
+					</li>
+					<li onclick='getSecurity()'>
+						<div class="">
+							<div class="">
+								<div class=""><i class="fas fa-user-shield"></i></div>
+								<div class=""></div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="work-icon">
+							<div class=""><i class="fas fa-gavel"></i></div>
+							<div class="lines"></div>
+							<div class="lines"></div>
+							<div class="lines"></div>
+						</div>
+					</li>
+					<li>
+						<div class="mail-icon">
+							<div class="">
+								<div class=""><i class="fas fa-mouse"></i></div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</nav>
 		</div>
-	  </li>
-	  <li>
-		<div class="work-icon">
-		  <div class=""><i class="fas fa-gavel"></i></div>
-		  <div class="lines"></div>
-		  <div class="lines"></div>
-		  <div class="lines"></div>
+	
+		<div id="pages">
+			<section id="fas fa-user-secret" class="page">
+			</section>
         </div>
-        </li>
-        <li>
-            <div class="mail-icon">
-                <div class="">
-                    <div class=""><i class="fas fa-mouse"></i></div>
-                </div>
-            </div>
-	   </li>
-	</ul>
-</nav>
-	</div>	
-</body>
+        
+        <div id="text"></div>
+	</body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>
@@ -412,35 +405,28 @@ switchContainer.on('click', function() {
 });
 </script>
 <!-- SCRIPT DA FUNÇÂO CLICK-->
-<script>
-	$("#sidebar").on("click", ".click", function(event){
-		console.log("click");
-	});
-</script>
 <script type="text/javascript">
-	$(document).ready(function() {
-		$('#privacidade').hide();
+///SCRIPT DA FUNÇÂO CLICK DO BUTTON
+$("#sidebar").on("click", ".click", function(event){
+	console.log("click");
+});
 
-		$('.fas fa-user-secret').click(function(event){
-			event.preventDefault();
-			$(".fas fa-user-secret").show("slow");
-		});
-		//Função que mostra o conteúdo de acordo com o botão clicado
-		$("#sidebar li a").on('click', function(e) {
-		e.preventDefault();
-		var page = $(this).data('page');
-		$("#pages .page:not('.hide')").stop().fadeOut('fast', function() {
-			$(this).addClass('hide'); 			
-			$('#pages .page[data-page="'+page+'"]').fadeIn('slow').removeClass('hide');              
-		});
-	});
-		
-		//Função que insere a classe Active no botão que foi clicado
-		$("#sidebar li").on('click', function(){
-			$(this).siblings().removeClass('active');
-			$(this).addClass('active');
-		});
-	});
-</script>
+function getSecurity(){
+const text = document.querySelector('#text');
+text.innerHTML='teste para ver se funciona';
+console.log("Está funcionando fé");
+}
+function getPrivati(){
+const text = document.querySelector('#text');
+text.innerHTML='Teste  para ver se funciona';
+console.log("Está funcionando fé...");
+}
 
+
+//Função que insere a classe Active no botão que foi clicado
+$("#sidebar li").on('click', function () {
+	$(this).siblings().removeClass('active');
+	$(this).addClass('active');
+    });
+</script> 
 </html>
