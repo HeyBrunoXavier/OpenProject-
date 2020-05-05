@@ -331,8 +331,12 @@ nav ul li > div {
     left: 25px;
     top: 190px;
 }
+
+html{
+    scroll-behavior: smooth;
+}
 .active{
-    background:  #22C322!important;
+    background:  rgb(107, 191, 206)!important;
 }
 .container{
     width:960px;
@@ -347,7 +351,9 @@ nav ul li > div {
 }
 h1{
     text-align:center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 </style>
 	<body>
 		<div class="switch-container">
@@ -356,7 +362,7 @@ h1{
 		<div class="container">
 	
 			<nav id="sidebar">
-				<ul class="click">
+				<ul class="click" id="Topnav" style="position:fixed;">
 					<li onclick='getPrivati()'>
 						<div>
 							<div>
@@ -391,7 +397,7 @@ h1{
 				</ul>
 			</nav>
 		</div>
-	
+        
 		<div id="pages">
 			<section id="fas fa-user-secret" class="page">
 			</section>
@@ -452,6 +458,6 @@ console.log("Está funcionando fé...");
 $("#sidebar li").on('click', function () {
 	$(this).siblings().removeClass('active');
 	$(this).addClass('active');
-    });
+});
 </script> 
 </html>
