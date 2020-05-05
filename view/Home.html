@@ -334,6 +334,16 @@ nav ul li > div {
 .active{
     background:  #22C322!important;
 }
+.container{
+    width:960px;
+	margin:0 auto;
+    text-align:justify;
+}
+#text{
+    clear:both;
+    min-height: 700px;
+	padding: 130px 0 0 0;
+}
 </style>
 	<body>
 		<div class="switch-container">
@@ -383,7 +393,9 @@ nav ul li > div {
 			</section>
         </div>
         
-        <div id="text"></div>
+        <div class="container">
+            <div id="text"></div>
+        </div>
 	</body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -413,7 +425,7 @@ $("#sidebar").on("click", ".click", function(event){
 
 function getSecurity(){
 const text = document.querySelector('#text');
-text.innerHTML='teste para ver se funciona';
+text.innerHTML=' Como o sucesso do nosso site (s) e Jogos (como esse termo é definido na Seção 11 abaixo)depende da construção e manutenção da boa vontade com nossos usuários, estamos empenhados em implementar medidas destinadas a proteger a privacidade daqueles que usam os sites e Jogos.<br> Esta declaração de privacidade descreve os tipos de informações que coletamos; Como podemos coletar, usar e compartilhar as informações; suas escolhas relacionadas às nossas práticas de informações; e como protegemos suas informações. Ao utilizar nossos serviços, você significa o seu acordo a esta declaração de privacidade, nossos termos e outros RedFox regras, políticas, avisos, acordos e orientações que podem ser disponibilizados para você de vez em quando.';
 console.log("Está funcionando fé");
 }
 function getPrivati(){
