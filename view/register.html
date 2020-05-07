@@ -157,7 +157,7 @@ body {
   position: absolute;
   transform: translate(-50%, -50%);
   box-sizing: border-box;
-  padding: 68px 28px;
+  padding: 38px 28px;
 
 }
 .usuario{
@@ -187,7 +187,7 @@ h1{
   margin-bottom: 21px;
 
 }
-.login input[type="text"], input[type="password"]{
+.login input[type="text"], input[type="password"], input[type="email"]{
   border: none;
   border-bottom: 1px solid white;
   background: transparent;
@@ -232,20 +232,17 @@ h1{
     <!-- START DOS CARDS -->
 <div id="particles-js"> 
     <div class="login">
-        <img src="escudo.png" class="usuario" width="100" height="100" alt="">
-        <h1>Login</h1>
-        <form action="/Home.html" method="POST">
-          <p>Usuario</p>
-          <input type="text" name="email" placeholder=" Insira nome">
-          <p> Senha</p>
-          <input type="password" name="password" placeholder=" Insira sua Senha">
-          <input type="submit" name="" value="Login">
-          <a href="#"> Equeceu sua Senha ?</a><br>
-          <a href="#"> Ainda não possui conta</a>
-          <br>
+        <img src="escudo.png" class="usuario" width="90" height="90" alt="">
+        <h1>Register</h1>
+        <form action="/login.html" method="POST">
+          <p>Email</p>
+          <input type="email" name="email" placeholder=" email" required >
+          <p>User</p>
+          <input type="text" name="user" placeholder=" user" required >
+          <p>Password</p>
+          <input type="password" name="password" placeholder="password"required>
+          <input type="submit" name="" value="Resgister">
         </form>
-      </div>
-
 </div>
 
 </body>
