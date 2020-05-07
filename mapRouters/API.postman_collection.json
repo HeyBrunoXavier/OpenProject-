@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "ae6ba5e7-06e0-4f3c-8d01-8e6fd3562bb3",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{api}}/auth/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Ronaldao\",\n\t\"email\":\"ronaldoejaqueline.com\",\n\t\"password\":\"teste\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/auth/register",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
