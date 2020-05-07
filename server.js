@@ -3,21 +3,7 @@ var mysql = require('mysql');
 var session = require('express-session');
 var path = require('path');
 const app = express();
-<<<<<<< HEAD
-
 const bodyParser = require('body-parser');
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false}));
-
-require('./src/app/controllers/index')(app);
-
-
-
-
-=======
-const bodyParser = require('body-parser');
->>>>>>> 58241b23f222e63dfe456f2932bbbd1900a3b947
 app.use(express.static('public'));
 app.use(session({
     secret: 'secret',
@@ -39,13 +25,8 @@ var connection = mysql.createConnection({
 app.get('/',function(req,res){
     res.sendFile(__dirname + '/view/login.html')
 });
-<<<<<<< HEAD
-app.get('/login.html',function(req,res){
-        res.sendFile(__dirname + '/view/login.html')
-=======
 app.get('/index',function(req,res){
         res.sendFile(__dirname + '/view/index.html')
->>>>>>> 58241b23f222e63dfe456f2932bbbd1900a3b947
 });
 app.get('/home.html',function(req,res){
     res.sendFile(__dirname + '/view/home.html')
@@ -71,7 +52,7 @@ app.post('/auth', function(request, response) {
 		response.end();
 	}
 });
-// PORT 8080 STARTED SERVICE
+// PORT 8080 STARTED SERVICE!
 app.listen(8080,function(erro){
     if(erro){
         console.log('Ocorreu um erro!');
